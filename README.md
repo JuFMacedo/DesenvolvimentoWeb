@@ -1,7 +1,7 @@
 <h1 align="center">
   🪴HOME DECOR</h1>
   <div align="center">
-  <img align="right" width="200" height="300" src="https://github.com/JuFMacedo/DesenvolvimentoWeb/">
+  <img align="right" width="300" height="300" src="https://github.com/JuFMacedo/DesenvolvimentoWeb/blob/main/Projeto_Individual/src/assets/Logo.png">
 </div>
 
     
