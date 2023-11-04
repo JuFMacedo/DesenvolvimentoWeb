@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap");
+
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #acac9a;
+  z-index: 100;
+  padding: 100%;
+}
+
+/* Estilo para o botão "Entrar" */
+.button-entrar {
+  background-color: #acac9a;
+  color: #ffffff;
+  border: none;
+}
+/* Estilo para o botão "Entrar" quando o mouse passa por cima (hover) */
+.button-entrar:hover {
+  background-color: #acac9a;
+}
+
+body {
+  background: url("imagem/decoração.jpg") no-repeat fixed center;
+  background-size: cover;
+}

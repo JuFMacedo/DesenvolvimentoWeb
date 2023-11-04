@@ -1,0 +1,15 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: #acac9a;
+  z-index: 100;
+}
+
+Form.Group {
+  color: black;
+}
+
+body {
+  background: url("assets/decoração.jpg") no-repeat fixed center;
+  background-size: cover;
+}
