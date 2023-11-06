@@ -1,0 +1,30 @@
+.card-container {
+  display: flex;
+  justify-content: space-between; /* Distribui os cards horizontalmente  */
+  margin: 50px; /* Espaçamento entre os cards */
+}
+
+.custom-card {
+  margin-right: 20px; /* Adicione a margem direita para separar os cards */
+}
+
+footer {
+  background-color: #a8a89b;
+  color: black;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  height: 50px;
+}
+
+footer p {
+  line-height: 10px;
+  margin: auto;
+}

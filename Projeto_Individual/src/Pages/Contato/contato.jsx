@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 const Contato = () => {
   const navigate = useNavigate();
 
-  // Vai redireciona para a rota da página Home
+  // Vai redirecionar para a rota da página Home
   const handleClick = () => {
     navigate("/home");
   };
@@ -16,16 +16,13 @@ const Contato = () => {
       <header>
         <Header />
       </header>
-      <div>
+      <div className="contact-container">
         <h1>Contato</h1>
-
-        <p3>
-          <section>
-            <h2>Informações de Contato:</h2>
-            <h3>Telefone: (24) 2200-0000</h3>
-            <h3>Email: homedecor@gmail.com</h3>
-          </section>
-        </p3>
+        <section>
+          <h2>Informações de Contato:</h2>
+          <h3>Telefone: (24) 2200-0000</h3>
+          <h3>Email: homedecor@gmail.com</h3>
+        </section>
       </div>
       <button onClick={handleClick}>Clique para voltar para Home </button>
       <footer>

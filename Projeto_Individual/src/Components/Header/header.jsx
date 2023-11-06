@@ -1,48 +1,64 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
-import "./style.css";
 import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const Header = () => {
   return (
     <header>
-      <>
-        <div className="Logo">
-          <img src={Logo} alt="logo Home Decor" />
-        </div>
-        <Navbar expand="lg" className="bg-body-tertiary">
-          <Container>
-            <Navbar.Brand href="#home">Home Decor</Navbar.Brand>
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
-                <NavDropdown title="Home" id="basic-nav-dropdown">
-                  <Nav.Link as={Link} to="/home">
-                    Home
-                  </Nav.Link>
-                  <NavDropdown.Item href="#action/3.1">Sala</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.2">Quarto</NavDropdown.Item>
-                  <NavDropdown.Item href="#action/3.3">
-                    Cozinha
-                  </NavDropdown.Item>
-                  <NavDropdown.Divider />
-                </NavDropdown>
-
-                <Nav.Link as={Link} to="/contato">
-                  Contato
+      <Container fluid>
+        <Navbar expand="lg" className="custom-navbar-bg ml-3">
+          <Navbar.Brand as={Link} to="/">
+            <img
+              src={Logo}
+              alt="Logo"
+              height="80"
+              className="d-inline-block align-top"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              <Nav.Link as={Link} to="/">
+                Login
+              </Nav.Link>
+              <NavDropdown title="Home" id="basic-nav-dropdown">
+                <Nav.Link as={Link} to="/home">
+                  Home
                 </Nav.Link>
-                <Nav.Link as={Link} to="/faleconosco">
-                  Fale Conosco
-                </Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Container>
+                <NavDropdown.Item as={Link} to="/sala">
+                  Sala
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+              </NavDropdown>
+              <Nav.Link as={Link} to="/contato" className="d-none d-lg-block">
+                Contato
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="/faleconosco"
+                className="d-none d-lg-block"
+              >
+                Fale Conosco
+              </Nav.Link>
+            </Nav>
+            <Form className="d-flex">
+              <Form.Control
+                type="search"
+                placeholder="Buscar"
+                className="me-2"
+                aria-label="Search"
+              />
+              <Button variant="outline-success">Buscar</Button>
+            </Form>
+          </Navbar.Collapse>
         </Navbar>
-      </>
+      </Container>
     </header>
   );
 };

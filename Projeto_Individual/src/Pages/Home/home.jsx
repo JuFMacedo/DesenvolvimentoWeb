@@ -1,123 +1,49 @@
+import React from "react";
+import { Link } from "react-router-dom";
 import "./home.css";
+import Header from "../../Components/Header/header";
+import Footer from "../../Components/Footer/footer";
+import Carousel from "react-bootstrap/Carousel";
+import firstImage from "../../assets/item1.jpg";
+import secondImage from "../../assets/item2.jpg";
+import thirdImage from "../../assets/arranjo.jpg";
+import { useParams } from "react-router-dom";
 
-const Home = () => {
+function Home() {
+  const { login } = useParams();
   return (
     <div>
       <header>
-        <Heather />
+        <Header />
       </header>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
-        <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            <h1>
-              <span>Home Decor</span>
-            </h1>
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-          <div className="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-              <li className="nav-item">
-                <a className="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li className="nav-item dropdown">
-                <a
-                  className="nav-link dropdown-toggle"
-                  href="#"
-                  id="navbarDropdown"
-                  role="button"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Departamento
-                </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a className="dropdown-item" href="#">
-                    Banheiro
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Cozinha
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Sala
-                  </a>
-                  <a className="dropdown-item" href="#">
-                    Quarto
-                  </a>
-                </div>
-              </li>
-            </ul>
-
-            <form className="d-flex" role="search">
-              <input
-                className="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button className="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </div>
-      </nav>
-      <h2>Transformando Espaços em Lares</h2>
-      <p>
-        <strong>
+      <div className=" Texto1">
+        <h2>Transformando Espaços em Lares {login}!</h2>
+        <p>
           Os itens de decoração para casa são os toques mágicos que transformam
-          casas em lares.
-          <br />
-          São eles que conferem personalidade e charme a cada canto, tornando os
-          ambientes verdadeiramente únicos.
-        </strong>
-      </p>
-      <div className="d-flex justify-content-center">
-        <div
-          id="carouselExample"
-          className="carousel slide"
-          style={{ maxWidth: "80%" }}
-        >
-          <div className="carousel-inner">
-            <div className="carousel-item active">
-              <img
-                src="/assets/item1.jpg" // Corrija o caminho da imagem
-                alt="Jarros coloridos para enfeite"
-                style={{ maxWidth: "80%", height: "auto" }}
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src="/assets/item2.jpg" // Corrija o caminho da imagem
-                alt="almofadas brancas"
-                style={{ maxWidth: "80%", height: "auto" }}
-              />
-            </div>
-            <div className="carousel-item">
-              <img
-                src="/assets/item3.png" // Corrija o caminho da imagem
-                alt="almofadas coloridas"
-                style={{ maxWidth: "80%", height: "auto" }}
-              />
-            </div>
-          </div>
-        </div>
+          casas em lares. São eles que conferem personalidade e charme a cada
+          canto, tornando os ambientes verdadeiramente únicos.
+        </p>
       </div>
-
-      <p>
-        <strong>
+      <Carousel fade className="carousel-rectangular-landscape">
+        <Carousel.Item>
+          <img src={firstImage} alt="First slide" className="carousel-image" />
+          <Carousel.Caption></Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            src={secondImage}
+            alt="Second slide"
+            className="carousel-image"
+          />
+          <Carousel.Caption></Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img src={thirdImage} alt="Third slide" className="carousel-image" />
+          <Carousel.Caption></Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
+      <div className=" Texto2">
+        <p>
           Das paredes ao chão, dos móveis aos acessórios, cada escolha de
           decoração conta uma história, reflete gostos pessoais e cria uma
           atmosfera acolhedora. A diversidade de itens de decoração para casa é
@@ -126,23 +52,20 @@ const Home = () => {
           carrega memórias preciosas. Independentemente do seu estilo, a
           decoração é a sua chance de contar a história da sua casa e criar um
           refúgio que seja verdadeiramente seu.
-        </strong>
-      </p>
-      <nav>
+        </p>
+      </div>
+      <div className="categories">
         <ul>
-          <a className="btn btn-primary" href="contato.html" role="button">
-            Contato
-          </a>
-          <a className="btn btn-primary" href="contato.html" role="button">
-            Login
-          </a>
+          <li>
+            <Link to="/sala">Sala</Link>
+          </li>
         </ul>
-      </nav>
+      </div>
       <footer>
         <Footer />
       </footer>
     </div>
   );
-};
+}
 
 export default Home;

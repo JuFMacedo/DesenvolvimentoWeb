@@ -1,11 +1,20 @@
 footer {
-  background-color: #acac9a;
-  color: rgb(97, 93, 93);
+  background-color: #a8a89b;
+  color: black;
   padding: 10px 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-align: center;
+  font-size: 16px;
   font-family: Georgia, "Times New Roman", Times, serif;
-  font-size: large;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  z-index: 1000;
+  height: 40px;
+}
+
+footer p {
+  line-height: 10px;
+  margin: auto;
 }
