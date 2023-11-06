@@ -1,14 +1,23 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
 import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
 
 const Header = () => {
+  const [pesquisa, setPesquisa] = useState("");
+  const navigate = useNavigate();
+
+  const handlePesquisa = () => {
+    if (pesquisa.trim() !== "") {
+      // Redirecionar para a página Sala com o termo de pesquisa na URL
+      history.push(`/sala?pesquisa=${pesquisa}`);
+    }
+  };
+
   return (
     <header>
       <Container fluid>
@@ -51,10 +60,12 @@ const Header = () => {
               <Form.Control
                 type="search"
                 placeholder="Buscar"
+                value={pesquisa}
+                onChange={(e) => setPesquisa(e.target.value)}
                 className="me-2"
                 aria-label="Search"
               />
-              <Button variant="outline-success">Buscar</Button>
+              <button onClick={() => navigate("/outra-rota")}>Buscar</button>
             </Form>
           </Navbar.Collapse>
         </Navbar>

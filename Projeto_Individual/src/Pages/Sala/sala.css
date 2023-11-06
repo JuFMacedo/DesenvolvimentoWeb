@@ -1,3 +1,12 @@
+.custom-text {
+  position: relative;
+  text-align: center;
+  margin: auto;
+  padding-top: 100px;
+  font-weight: normal;
+  font-size: 30px;
+}
+
 .card-container {
   display: flex;
   justify-content: space-between; /* Distribui os cards horizontalmente  */
